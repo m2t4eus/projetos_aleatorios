@@ -1,0 +1,29 @@
+class Conta:
+    contador = 400
+    def __init__(self, titular, saldo, limite):
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
+        Conta.contador =+ 1
+
+    def extrato(self):
+        print(f'Saldo de {self.__saldo} do titular {self.__titular} com limite de {self.__limite}')
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print(f"Valor depositado: {valor}")
+            print(f"Saldo atual: {self.__saldo}")
+        else:
+            print("Só é permitido depositar valor positivo")
+
+    def sacar(self, valor):
+        if valor > self.__saldo:
+            return print(f"Saldo insuficiente, Saldo atual {self.__saldo}")
+        self.__saldo -= valor
+        print(f"Total sacado: {valor}, Saldo após o saque: {self.__saldo}")
+
+conta1 = Conta("Matheus", 150.00, 1500)
+
+conta1.depositar(120)
+conta1.sacar(35.32)
