@@ -1,0 +1,36 @@
+class Indicador:
+    def __init__(self, nome, valor_base, operador, mensagem_s_m, destinatario_email, assunto_s_m,
+                 canal_slack, token_slack, link_grafico_bi, tempo_entre_disparos, mensagem_alerta_sonoro,
+                 hora_comercial, dias_uteis, valor_atual):
+        self.nome = nome
+        self.valor_base = valor_base
+        self.operador = operador
+        self.mensagem_s_m = mensagem_s_m
+        self.destinatarios_email = destinatario_email
+        self.assunto_s_m = assunto_s_m
+        self.canal_slack = canal_slack
+        self.token_slack = token_slack
+        self.link_grafico_bi = link_grafico_bi
+        self.tempo_entre_disparo = tempo_entre_disparos
+        self.mensagem_alerta_sonoro = mensagem_alerta_sonoro
+        self.hora_comercial = hora_comercial
+        self.dias_uteis = dias_uteis
+        self.valor_atual = valor_atual
+
+    def verificar_indicador(self):
+
+        if self.operador == 1:
+            if self.valor_atual < self.valor_base:
+                return True
+            else:
+                return False
+        if self.operador == 2:
+            if self.valor_atual > self.valor_base:
+                return True
+            else:
+                return False
+        if self.operador == 3:
+            if self.valor_atual == self.valor_base:
+                return True
+            else:
+                return False
