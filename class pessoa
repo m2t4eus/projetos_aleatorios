@@ -1,0 +1,25 @@
+class Pessoa:
+    def __init__(self, nome, idade, altura):
+        self.__nome = nome
+        self.__idade = idade
+        self.__altura = altura
+
+    def set(self, nome, idade, altura):
+        if nome != "":
+            self.__nome = nome
+        if idade != "":
+            self.__idade = idade
+        if altura != "":
+            self.__altura = altura
+
+    def imprime(self):
+        print(f"Nome: {self.__nome}\n"
+              f"Idade: {self.__idade}\n"
+              f"Altura: {self.__altura}")
+
+pessoa1 = Pessoa("Matheus", 26, 1.75)
+pessoa2 = Pessoa("Alexe", 28, 1.65)
+
+Pessoa.imprime(pessoa1)
+Pessoa.set(pessoa1, nome="Marlon Alves",idade="",altura=1.83)
+Pessoa.imprime(pessoa1)
