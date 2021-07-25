@@ -1,0 +1,27 @@
+class Pessoa:
+    def __init__(self, nome, cpf, saldo):
+        self.__nome = nome
+        self.__cpf = cpf
+        self.__saldo = saldo
+
+    @property
+    def nome(self):
+        return self.__nome
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, valor):
+        self.__saldo = valor
+
+    def defsaldo(self, valor):
+        return self.__saldo == valor
+
+pessoa1 = Pessoa("Matheus", "123.123.252.54", 15000)
+
+print(pessoa1.nome)
+print(pessoa1.saldo)
+pessoa1.saldo = 120.00
+
+print(pessoa1.saldo)
